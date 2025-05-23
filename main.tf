@@ -4,6 +4,12 @@ resource "linode_vpc" "alphabet_vpc" {
     region = var.region
 }
 
+resource "linode_vpc_subnet" "alphabet_vpc_subnet" {
+  vpc_id = linode_vpc.alphabet_vpc.id
+  label  = "${var.vpc_name}-subnet"
+  ipv4   = "10.0.1.0/24"
+}
+
 
 resource "linode_firewall" "alphabet_firewall" {
     label = var.firewall_name

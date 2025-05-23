@@ -7,3 +7,8 @@ output "firewall_id" {
     description = "Firewall"
     value = linode_firewall.alphabet_firewall.id
 }
+
+output "subnet_id" {
+    description = "Subnet"
+    value = linode_vpc_subnet.alphabet_vpc_subnet.id
+}
