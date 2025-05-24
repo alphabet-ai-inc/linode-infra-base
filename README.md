@@ -107,7 +107,7 @@ This Terraform project provisions a Virtual Private Cloud (VPC) and a Cloud Fire
 ## Troubleshooting
 
 - **Region Error**: If you see `[400] This region does not support VPCs`, update `var.region` in `variables.tf` to a supported region (e.g., `us-iad`, `it-mil`, `us-mia`, `fr-par`). You can use a temporary `data "linode_regions"` block to list supported regions.
-- **Token Error**: If you encounter `[401] Your OAuth token is not authorized`, ensure the API token in `~/.linode_token` has `read/write` permissions for `Firewalls`, `VPCs`, and `Linodes`. Create a new token in Linode Cloud Manager if needed.
+- **Token Error**: If you encounter `[401] Your OAuth token is not authorized`, ensure the API token in `~/.linode_token` has `read/write` permissions for `Firewalls`, `VPCs`, and `Linodes`. Create a new token in Linode Cloud Manager if needed. For deleting resources you need permissions for `Events`.
 - **Provider Installation**: If you face issues with provider installation, ensure the `.terraformrc` file in the project directory is correctly configured to use the official Terraform Registry for `linode/linode`.
 
 ## Notes

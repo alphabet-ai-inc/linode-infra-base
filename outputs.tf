@@ -12,3 +12,8 @@ output "subnet_id" {
     description = "Subnet"
     value = linode_vpc_subnet.alphabet_vpc_subnet.id
 }
+
+output "region" {
+  description = "Region"
+  value       = var.region
+}
