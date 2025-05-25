@@ -12,11 +12,6 @@ This Terraform project provisions a Virtual Private Cloud (VPC), a Cloud Firewal
   - firewall_id
   - region: region for VPC and subnet
   - subnet_id
-  - bucket (sensitive): object contains:
-    - name
-    - region
-    - access_key
-    - secret_key
 
 ## Prerequisites
 
@@ -37,7 +32,6 @@ This Terraform project provisions a Virtual Private Cloud (VPC), a Cloud Firewal
 - `variables.tf`: Contains variables for the region, VPC name, and firewall name.
 - `outputs.tf`: Outputs the VPC ID and Firewall ID.
 - `provider.tf`: Configures the Linode provider.
-- `bucket.tf`: Defines Object Storage Bucket and Object Storage Key
 
 ## Setup
 
@@ -68,6 +62,12 @@ This Terraform project provisions a Virtual Private Cloud (VPC), a Cloud Firewal
    ```
 
 3. **Apply the configuration**:
+  Before execution `terraform apply` execute:
+   ```bash
+   export AWS_REQUEST_CHECKSUM_CALCULATION=when_required  
+   export AWS_RESPONSE_CHECKSUM_VALIDATION=when_required
+   ```
+
 
    ```bash
    terraform apply
@@ -79,7 +79,6 @@ This Terraform project provisions a Virtual Private Cloud (VPC), a Cloud Firewal
 
 ```
 Outputs:
-bucket = <sensitive>
 firewall_id = <firewall_id>
 region = <region_id>
 subnet_id = <subnet_id>
@@ -111,9 +110,6 @@ vpc_id = <vpc_id>
 | `region` | Linode region for VPC | `us-iad` |
 | `vpc_name` | Name of the VPC | (Defined in `variables.tf`) |
 | `firewall_name` | Name of the Cloud Firewall | (Defined in `variables.tf`) |
-| `bucket_region` | Linode region for Object Storage | `us-iad` |
-| `bucket_name` | Name of the Object Storage Bucket | `us-iad` |
-
 
 
 ## Troubleshooting

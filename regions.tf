@@ -2,12 +2,12 @@
 # https://api.linode.com/v4/regions
 data "linode_regions" "vpc_regions" {
   filter {
-    name = "status"
+    name   = "status"
     values = ["ok"]
   }
 
   filter {
-    name   = "capabilities"
+    name = "capabilities"
     # values = ["VPCs"]
     values = ["Object Storage"]
   }

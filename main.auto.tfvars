@@ -1,1 +1,1 @@
-region="us-ord"
+region = "us-ord"
