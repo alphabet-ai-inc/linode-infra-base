@@ -124,3 +124,11 @@ vpc_id = <vpc_id>
 - Ensure the region supports VPCs (e.g., `us-iad`, `it-mil`, `us-mia`, `fr-par`).
 - For additional firewall rules, modify the `inbound` or `outbound` blocks in `main.tf`.
 - The API token is read from `~/.linode_token` to prevent accidental inclusion in version control.
+- upgrade Terraform:
+```bash
+# For Linux (amd64)
+wget https://releases.hashicorp.com/terraform/1.12.1/terraform_1.12.1_linux_amd64.zip
+unzip terraform_1.12.1_linux_amd64.zip
+sudo mv terraform /usr/local/bin/
+terraform version
+```

@@ -7,7 +7,7 @@ variable "region" {
 variable "vpc_name" {
   description = "VPC name"
   type        = string
-  default     = "alphabet-ai-net"
+  default     = "alphabet-ai-vpc"
 }
 
 variable "firewall_name" {
