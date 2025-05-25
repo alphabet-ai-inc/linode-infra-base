@@ -8,7 +8,8 @@ data "linode_regions" "vpc_regions" {
 
   filter {
     name   = "capabilities"
-    values = ["VPCs"]
+    # values = ["VPCs"]
+    values = ["Object Storage"]
   }
 }
 

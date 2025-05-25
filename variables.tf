@@ -15,3 +15,15 @@ variable "firewall_name" {
     type = string
     default = "alphabet-ai-firewall"
 }
+
+variable "bucket_name" {
+  description = "Name of the Object Storage bucket"
+  type        = string
+  default     = "infra-config"
+}
+
+variable "bucket_region" {
+  description = "Not all VPC regions work with Objects Storages"
+  type        = string
+  default     = "us-ord"
+}
