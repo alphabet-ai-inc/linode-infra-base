@@ -40,6 +40,15 @@ resource "linode_firewall" "alphabet_firewall" {
     ipv6     = ["::/0"]
   }
 
+  inbound {
+    label    = "portainer"
+    action   = "ACCEPT"
+    protocol = "TCP"
+    ports    = "9000"
+    ipv4     = ["0.0.0.0/0"]
+    ipv6     = ["::/0"]
+  }
+
   outbound {
     label    = "allow-all-outbound"
     action   = "ACCEPT"
