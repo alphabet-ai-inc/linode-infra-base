@@ -47,7 +47,20 @@ This Terraform project provisions a Virtual Private Cloud (VPC), a Cloud Firewal
    - The default region is set to `us-iad` (Washington, DC) in `variables.tf`, which supports VPCs.
    - To find other regions supporting VPCs or Object Storages, you can use `regions.tf` to list available regions with `terraform plan`, then update `variables.tf` accordingly.
 
+4. **Access Key for Object Storage**
+   -in Linode Control Panel, left menu, select `Object Storage`, then select `Access Key` tab, press `Create Access Key` button:
+   ![create access key](images/image01.png)
+   - in opened block select region (`US, Chicago, IL (us-ord)`) and give read and write permissions.
+   - save obtained values in file `~/.linode_credentials` in the following format:
+   ```ini
+   [linode]
+   aws_access_key_id=<your_id_key>
+   aws_secret_access_key=<your_secret_key>
+   ```
+
 ## Usage
+
+**All terraform commands must be executed in the directory where the *.tf files are located.***
 
 1. **Initialize Terraform**:
 
